@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" defer src="./JS/app.js"></script>
+    <title>Ejercicio7</title>
 </head>
 <body>
-    <h1>Ejemplos de Alert en JavaScript</h1>
-
-    <!-- a) Alert de forma interna sin función -->
+    <!--
+        Dado un vector de enteros que se solicita por pantalla (mediante prompt)
+        separados por “,”, comprobar el mayor, el menor y por último la media de todos.
+        a) Mostrar en consola.
+        b) Mostrar en la propia página.
+    -->
     <script>
-        alert(`a) Este es un alert interno sin función`);
-    </script>
+        function calcularMediaSumaMayorMenor(){
+            let numeros = prompt(`Introduzca una seria de números dividos por comas`);
 
-    <!-- b) Alert en un evento en un botón -->
-    <button onclick="alert(`Este es un alert desde un evento en un botón`)">Mostrar Alert (evento)</button>
+            let array1 = numeros.split(`,`);
 
-    <!-- c) Alert usando una función -->
-    <button onclick="mostrarAlert()">Mostrar Alert (función)</button>
-    <script>
-        function mostrarAlert() {
-            alert(`c) Este es un alert desde una función`);
+            let suma = 0;
+            let media = 0;
+            let num = Number(array1[0]);
+            let mayor = num;
+            let menor = num;
+            
+            for (let i = 0; i < array1.length; i++) {
+                num = Number(array1[i]);
+                if (num > mayor) {
+                    mayor = num;
+                }
+                if (num < menor) {
+                    menor = num;
+                }
+                suma += num;
+            }
+
+            media = suma/array1.length;
+
+            document.write(`Suma: ${suma}<br>`);
+            document.write(`Media: ${media}<br>`);
+            document.write(`Mayor: ${mayor}<br>`);
+            document.write(`Menor: ${menor}<br>`);
+            
+            console.log(`Suma: ${suma}`);
+            console.log(`Media: ${media}`);
+            console.log(`Mayor: ${mayor}`);
+            console.log(`Menor: ${menor}`);
         }
-    </script>
 
-    <!-- d) Alert desde un archivo externo -->
-    <button onclick="mostrarAlertExterno()">Mostrar Alert (archivo externo)</button>
-</body>
+        calcularMediaSumaMayorMenor();
+
+    </script>
+    
 </html>
