@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" defer src="./JS/app.js"></script>
+    <title>Ejercicio6</title>
 </head>
 <body>
-    <h1>Ejemplos de Alert en JavaScript</h1>
-
-    <!-- a) Alert de forma interna sin función -->
+    <!-- 
+        Crea un script que pida al usuario un numero entero positivo N mayor a 0.
+        Hay que controlar que el numero introducido sea correcto. Si no es así se volverá a pedir.
+        A continuación, debe realizar lo siguiente:
+        a) Calcular los divisores del número N y mostrarlos.
+        b) Calcular la suma de los cuadrados de los divisores obtenidos en el paso anterior y
+        mostrarla.
+        c) Indicar si esa suma es un cuadrado o no (con una frase por pantalla)
+    -->
     <script>
-        alert(`a) Este es un alert interno sin función`);
-    </script>
+        let num;
+        do{
+            num = prompt(`Introduzca un número entero positivo mayor a 0`);
+            if(num<=0 || isNaN(num)){
+                prompt(`Número incorrecto, por favor introduzca un número entero positivo mayor a 0`);
+            }
+        } while(num <= 0 || isNaN(num));
 
-    <!-- b) Alert en un evento en un botón -->
-    <button onclick="alert(`Este es un alert desde un evento en un botón`)">Mostrar Alert (evento)</button>
-
-    <!-- c) Alert usando una función -->
-    <button onclick="mostrarAlert()">Mostrar Alert (función)</button>
-    <script>
-        function mostrarAlert() {
-            alert(`c) Este es un alert desde una función`);
+        // A
+        let divisores;
+        let mensaje = `Los divisores de el numero ${num} son: `;
+        for(let i = 1; i < num; i++){
+            if(num % i == 0){
+                divisores += i + " ";
+            }
         }
-    </script>
+        console.log(`${mensaje}${divisores}`);
 
-    <!-- d) Alert desde un archivo externo -->
-    <button onclick="mostrarAlertExterno()">Mostrar Alert (archivo externo)</button>
+        // B
+        let mensaje2 = `La suma de los cuadrados de los divisores obtenidos en el paso anterior es: `;
+        let suma = 0;
+        let cuadrado;
+        for(let i = 1; i < num; i++){
+            if(num % i == 0){
+                suma += i*i;
+            }
+        }
+        console.log(`${mensaje2}${suma}`);
+
+        // C
+        let mensaje3;
+        raiz = Math.sqrt(suma);
+        if(raiz % 1 === 0){
+            mensaje3 = `La suma de los cuadrados de los divisores es el cuadrado de ${raiz}`;
+        }
+        else{
+            mensaje3 = `La suma de los cuadrados de los divisores no es un cuadrado.`;
+        }
+        console.log(mensaje3);
+
+    </script>
 </body>
 </html>

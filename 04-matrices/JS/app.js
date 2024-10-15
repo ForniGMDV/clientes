@@ -3,28 +3,21 @@
 
 // // Matrices
 // let matriz = [];
-// // let i = prompt("Dime el tamaño de columna:");
+function crearMatriz(filas, columnas) {
+    let matriz = [];
 
-// // for (let j = 0; j < i; j++){
-// //     matriz[j] = new Array(i);
-// // }
+    for (let i = 0; i < filas; i++) {
+        matriz[i] = []; // Inicializa la fila
+        for (let j = 0; j < columnas; j++) {
+            matriz[i][j] = i; // Asigna el valor inicial
+        }
+    }
 
-// autos = [['BMW1', 'BMW2', 'BMW3'], ['Audi1','Audi2'], ['Volvo']];
-// console.log(autos);
-// console.log(autos.length);
+    return matriz;
+}
 
-// function PintarMatriz(autos){
-//     let resultado;
-//     // ahora vamos a rellenar los valores
-//     for (let i = 0; i < autos.length; i++){ 
-//         for (let j = 0; j < autos[i].length; j++) {
-//             resultado += autos[i][j];
-//         }
-//         console.log(autos[i]);
-//     }
-// }
-
-// PintarMatriz(autos);
+let matriz2 = crearMatriz(4,4);
+console.log(matriz2);
 // function pedirNum(msj) {
 //     let a = prompt(); // Pedir al usuario
 //     while (isNaN(a)) {
@@ -33,41 +26,28 @@
 //     return Number(a);
 // }
 
-// function CreaYPintaMatriz(fila, columna){
-//     let matriz = new Array(fila);
+// Crear una matriz
+let matriz3 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
 
-//     for (let i = 0; i < columna; i++){  // inicializamos la matriz
-//         matriz[i] = new Array(fila);
-//     }
+// Acceder a un elemento
+console.log(matriz2[1][2]); // Salida: 6
 
-//     // ahora vamos a rellenar los valores
-//     for (let i = 0; i < fila; i++){ 
-//         for (let j = 0; j < columna; j++) {
-//             matriz[i][j] = j;
-//         }
-//         console.log(matriz[i]);
-//     }
-// }
+// Modificar un elemento
+matriz3[0][0] = 10;
+console.log(matriz3[0][0]); // Salida: 10
 
+// Recorrer la matriz
+for (let i = 0; i < matriz3.length; i++) {
+    for (let j = 0; j < matriz3[i].length; j++) {
+        console.log(matriz3[i][j]);
+    }
+}
 // let fila = pedirNum("Dime tamaño de la fila");
 // let columna = pedirNum("Dime tamaño de la columna");
-
-// CreaYPintaMatriz(fila, columna);
-
-
-// //noooooo LA EMPEZO EL CIPOLLO PERO NO LA ACABO
-// function otraCrearYPintarMatriz(fila,columna){
-//     let matriz = new Array(columna);
-
-//     // inicializamos matriz
-//     for (let i = 0; i < columna; i++){
-//         matriz[i] = [];
-//     }
-
-//     //relleno valores
-//     for (let i = 0; i < fila; i++){
-//     }
-// }
 
 // podemos crear una matriz tal que:  matriz = [[0,1,2,3],[0,1,2,3],[0,1,2,3]];
 
