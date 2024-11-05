@@ -7,6 +7,7 @@ function calcularVelocidades(){
         velocidades.push(Math.random()*5 + 1);
     }
     return velocidades;
+    console.log("hola")
 }
 
 function iniciar(){
