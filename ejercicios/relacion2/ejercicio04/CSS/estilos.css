@@ -1,0 +1,12 @@
+.botones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px;
+    gap: 30px;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    object-fit: cover; 
+}
